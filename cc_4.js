@@ -28,5 +28,14 @@ const products = [
  }
  console.log("Product prices after discount:", products); 
 
-
+ // Step 4: // Customer type discounts with if..else 
+    function extraDiscount(customerType) { 
+        if (customerType === "student") { 
+        extraDiscount = 0.05; 
+        } else if (customerType === "senior") {
+        extraDiscount = 0.07; 
+        } else  
+            return 0;  //anything else 
+        }
+ 
 
