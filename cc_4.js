@@ -31,11 +31,35 @@ const products = [
  // Step 4: // Customer type discounts with if..else 
     function extraDiscount(customerType) { 
         if (customerType === "student") { 
-        extraDiscount = 0.05; 
+        return  0.05; 
         } else if (customerType === "senior") {
-        extraDiscount = 0.07; 
-        } else  
-            return 0;  //anything else 
+        return  0.07; 
+        } else {
+           return 0;  //anything else 
         }
- 
+    }
+// Step 5: Checkout Process & Inventory 
+const customerTypes = ["regular", "student","senior"];
+ for (let i = 1; i <= 3; i++) {
+    const customerType = customerTypes[i -1];
+    const discountRate = extraDiscount(customerType);
+    
+    let subtotal = 0; 
 
+    for (const item of products) {
+        if (item.inventory > 0) {
+            subtotal += item.price; 
+            item.inventory--; // update 
+        } else { 
+            console.log(`Out of stock for Customer ${i}: ${item.name}`); 
+            }
+        }
+
+    const  finalTotal = subtotal *  (1 - discountRate); 
+    console.log(`Customer ${i}: (${customerType}) total: $${finalTotal.toFixed(2)}}`); 
+ } 
+// Step 6: Inspecting Products 
+const firstProduct = products[0]; 
+ for (const key in firstProduct ) {
+    console.log(`${key}: ${firstProduct[key]}`); 
+ } 
