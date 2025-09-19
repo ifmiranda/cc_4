@@ -56,10 +56,19 @@ const customerTypes = ["regular", "student","senior"];
         }
 
     const  finalTotal = subtotal *  (1 - discountRate); 
-    console.log(`Customer ${i}: (${customerType}) total: $${finalTotal.toFixed(2)}}`); 
+    console.log(`Customer ${i}: (${customerType}) total: $${finalTotal.toFixed(2)}}`);  
  } 
 // Step 6: Inspecting Products 
 const firstProduct = products[0]; 
  for (const key in firstProduct ) {
     console.log(`${key}: ${firstProduct[key]}`); 
  } 
+ // Step 7: Object entries 
+ for (const product of products) { 
+    for (const [key, value]of Object.entries(product)) { 
+        console.log (`key: ${key}: ${value}}`); 
+    }
+    console.log("------------------------"); 
+ } 
+
+ console.log("Final products state:", products); 
