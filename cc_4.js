@@ -56,7 +56,12 @@ const customerTypes = ["regular", "student","senior"];
         }
 
     const  finalTotal = subtotal *  (1 - discountRate); 
-    console.log(`Customer ${i}: (${customerType}) total: $${finalTotal.toFixed(2)}}`);  
+    console.log(`Customer ${i}: (${customerType}) total: $${finalTotal.toFixed(2)}}`);   
+
+        console.log(
+            `Inventory after Customer ${i}:`,
+            products.map(p => `${p.name}=${p.inventory}`)
+        );
  } 
 // Step 6: Inspecting Products 
 const firstProduct = products[0]; 
@@ -70,5 +75,5 @@ const firstProduct = products[0];
     }
     console.log("------------------------"); 
  } 
-
+ 
  console.log("Final products state:", products); 
